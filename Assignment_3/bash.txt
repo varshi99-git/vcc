@@ -1,0 +1,7 @@
+#!/bin/bash
+CPU_LOAD=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}')
+
+if (( $(echo "$CPU_LOAD > 75.0" | bc -l) )); then
+    echo "Scaling up in GCP..."
+    gcloud compute instance-groups managed resize my-instance-group --size=2
+fi

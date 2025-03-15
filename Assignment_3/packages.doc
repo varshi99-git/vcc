@@ -1,0 +1,10 @@
+crontab -e
+* * * * * /path/to/monitor.sh
+
+gsutil mb gs://my-app-bucket
+gsutil cp my-app.zip gs://my-app-bucket/
+gcloud compute ssh my-instance --zone=us-central1-a --command "
+    gsutil cp gs://my-app-bucket/my-app.zip .
+    unzip my-app.zip
+    bash deploy.sh"
+

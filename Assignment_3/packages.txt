@@ -1,0 +1,9 @@
+Installing the required packages
+sudo apt update && sudo apt install -y prometheus
+sudo systemctl restart prometheus
+wget https://github.com/prometheus/node_exporter/releases/latest/download/node_exporter-linux-amd64.tar.gz
+tar xvfz node_exporter-linux-amd64.tar.gz
+cd node_exporter-*/
+./node_exporter &
+sudo apt install awscli
+aws configure
