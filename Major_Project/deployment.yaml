@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dynamic-rebooking
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dynamic-rebooking
+  template:
+    metadata:
+      labels:
+        app: dynamic-rebooking
+    spec:
+      containers:
+      - name: dynamic-rebooking
+        image: gcr.io/your-gcp-project-id/dynamic-rebooking:v1
+        ports:
+        - containerPort: 8080
