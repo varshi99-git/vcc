@@ -434,6 +434,4 @@ def admin_logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    app = Flask(__name__)#static_folder="C:\\Users\\suriy\\OneDrive\\Desktop\\Devrev\\Flask sample 2""
-
+    app.run(host='0.0.0.0', port=8080)
