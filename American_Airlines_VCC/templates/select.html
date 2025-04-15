@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Ticket Booking</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+    }
+
+    .option {
+      margin-bottom: 20px;
+    }
+
+    .option label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .option input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .submit-btn button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-btn button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Flight Ticket Booking</h1>
+    <form action="/select" method="POST">
+      <div class="options">
+        <div class="option">
+          <label>
+            <input type="radio" name="option" value="user" required>
+            User
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="radio" name="option" value="admin" required>
+            Admin
+          </label>
+        </div>
+      </div>
+      <div class="submit-btn">
+        <button type="submit">Proceed</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

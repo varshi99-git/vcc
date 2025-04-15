@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Feedback</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .feedback {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        .feedback p {
+            margin: 0;
+            padding: 0;
+        }
+        .btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            position:absolute;
+            top:0;
+            right:0;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .button {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 16px;
+        background-color: #1de06b;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .button:hover {
+        background-color: #085d1e;
+    }
+        
+    </style>
+</head>
+<body>
+    <h1>Feedback</h1>
+    {% for feed in feedback %}
+    <div class="feedback">
+        <p><strong>User ID:</strong> {{ feed[1] }}</p>
+        <p><strong>Feedback:</strong> {{ feed[2] }}</p>
+    </div>
+    {% endfor %}
+    <br>
+    <br>
+    <a class="btn" href="/admin/dashboard">Dashboard</a>
+    <br>
+    <a class="button" href="/admin/nlp">View analytics</a>
+</body>
+</html>

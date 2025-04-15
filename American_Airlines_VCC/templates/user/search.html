@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .search-form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="time"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .center-end-text {
+            text-align: center;
+        }
+
+        .button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flights Today</h1>
+    {% if today_flights %}
+        <table>
+            <tr>
+                <th>Flight Number</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Price</th>
+                <th>Seats Available</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Book Now</th>
+            </tr>
+            {% for flight in today_flights %}
+                <tr>
+                    <td>{{ flight[1] }}</td>
+                    <td>{{ flight[2] }}</td>
+                    <td>{{ flight[3] }}</td>
+                    <td>{{ flight[4] }}</td>
+                    <td>{{ flight[5] }}</td>
+                    <td>{{ flight[6] }}</td>
+                    <td>{{ flight[7] }}</td>
+                    <td><a class="btn" href="/user/book/{{ flight[0] }}">Book</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <div class="container">
+            <div class="center-end-text">
+                <p>No flights available today</p>
+            </div>
+        </div>
+    {% endif %}
+    
+    <h1>Search for Flights</h1>
+    <div class="search-form">
+        <form method="post" action="/user/search">
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="fromm">From:</label>
+                <input type="text" id="fromm" name="fromm" required>
+            </div>
+            <div class="form-group">
+                <label for="to">To:</label>
+                <input type="text" id="to" name="to" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search Flights">
+            </div>
+        </form>
+    </div>
+    <br>
+    <a class="button" href="/user/dashboard">Dashboard</a>
+</body>
+</html>

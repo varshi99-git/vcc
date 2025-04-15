@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        .success-message {
+            margin-top: 100px;
+            font-size: 24px;
+            color: #00b33c;
+        }
+        .error-message {
+            margin-top: 100px;
+            font-size: 24px;
+            color: #b30000;
+        }
+        .btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            position:absolute;
+            top:0;
+            right:0;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .butn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            
+        }
+
+        .butn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    {%if message_error%}
+        <div class="error-message">{{message_error}}</div>
+    {%endif%}
+    <div class="success-message">{{message}}</div>
+
+    <br>
+    <a class="butn" href="/admin/add_flight">Add more </a>
+    <br>
+   
+    <a class="btn" href="/admin/dashboard">Dashboard</a>
+</body>
+</html>

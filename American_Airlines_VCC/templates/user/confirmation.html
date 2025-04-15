@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .confirmation-message {
+            margin-top: 20px;
+        }
+
+        .booking-details {
+            margin-top: 20px;
+        }
+
+        .booking-details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .booking-details th,
+        .booking-details td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .booking-details th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            position:absolute;
+            top:0;
+            right:0;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .search-form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="time"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Booking Confirmation</h1>
+    <div class="confirmation-message">
+        <p>Your booking has been confirmed!</p>
+    </div>
+
+                <div class="booking-details">
+                    <h2>Booking Details</h2>
+                    <table>
+                        <tr>
+                            <th>Flight Number</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Seats Booked</th>
+                            <th>Total Price</th>
+                        </tr>
+                        <tr>
+                            <td>{{ flight[1] }}</td>
+                            <td>{{ flight[2] }}</td>
+                            <td>{{ flight[3] }}</td>
+                            <td>{{ flight[6] }}</td>
+                            <td>{{ flight[7] }}</td>
+                            <td>{{ seats_booked }}</td>
+                            <td>{{ total_price }}</td>
+                        </tr>
+                    </table>
+                </div>
+              
+    <br>
+    <a class="btn" href="/user/dashboard">Dashboard</a>
+</body>
+</html>

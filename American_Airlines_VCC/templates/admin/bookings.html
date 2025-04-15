@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Bookings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    {% if bookings %}
+        <h1>Flight Bookings</h1>
+        <table>
+            <tr>
+                    <td>Flight Number</td>
+                    <td>Username</td>
+                    <td>Email</td>
+                    <td>Seats booked</td>
+            </tr>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking[0] }}</td>
+                <td>{{ booking[1] }}</td>
+                <td>{{ booking[2] }}</td>
+                <td>{{ booking[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h1>No bookings yet </h1>
+    {% endif %}
+    <br>
+    <br>
+    <a class="btn" href="/admin/dashboard">Dashboard</a>
+
+</body>
+</html>

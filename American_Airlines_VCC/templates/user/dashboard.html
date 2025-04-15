@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ef1010;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #600005;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Dashboard</h1>
+    <h1>Welcome {{username}}</h1>
+    <ul>
+        <li><a href="/user/search " class="button">Search and book flight</a></li>
+        <li><a href=" /user/mybookings" class="button">View my bookings</a></li>
+        <li><a href=" /user/feedback" class="button">Write feedback</a></li>
+    </ul>
+    <br>
+    <br>
+    <a class="btn" href="/user/logout">Logout</a>
+</body>
+</html>

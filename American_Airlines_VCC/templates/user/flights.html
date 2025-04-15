@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .butn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            position:absolute;
+            top:0;
+            right:0;
+        }
+
+        .butn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    {% if flights %}
+        <h1>Flight Search Results</h1>
+        <table>
+            <tr>
+                <th>Flight Number</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Price</th>
+                <th>Seats Available</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Book Now</th>
+            </tr>
+            {% for flight in flights %}
+            <tr>
+                <td>{{ flight[1] }}</td>
+                <td>{{ flight[2] }}</td>
+                <td>{{ flight[3] }}</td>
+                <td>{{ flight[4] }}</td>
+                <td>{{ flight[5] }}</td>
+                <td>{{ flight[6] }}</td>
+                <td>{{ flight[7] }}</td>
+                <td><a class="btn" href="/user/book/{{ flight[0] }}">Book</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h1>OPPSS! No flights available in the selected date and time </h1>
+        <a class="btn" href="/user/search">Search for alternate date and time</a>
+        <br>
+        <br>
+    {% endif %}
+
+    <br>
+    <a class="butn" href="/user/dashboard">Dashboard</a>
+    
+</body>
+</html>

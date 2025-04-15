@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ef1010;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #600005;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <ul>
+        <li><a href=" /admin/add_flight " class="button">Add Flight</a></li>
+        <li><a href=" /admin/remove_flight" class="button">Remove Flight</a></li>
+        <li><a href="/admin/view_feedback" class="button">View Feedback and Analytics</a></li>
+        <li><a href="/admin/flights" class="button">View Bookings</a></li>
+        <br>
+        <br>
+        <li><a href="/admin/add_admin" class="button">Add admin</a></li>
+    </ul>
+    <br>
+    <br>
+    <a class="btn" href="/admin/logout">Logout</a>
+</body>
+</html>

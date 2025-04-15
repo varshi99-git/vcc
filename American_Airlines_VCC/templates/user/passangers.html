@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .confirmation-message {
+            margin-top: 20px;
+        }
+
+        .booking-details {
+            margin-top: 20px;
+        }
+
+        .booking-details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .booking-details th,
+        .booking-details td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .booking-details th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            position:absolute;
+            top:0;
+            right:0;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .search-form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="time"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .butn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            
+        }
+
+        .butn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    {% if seats_booked %}
+                <h2>Passenger Details</h2>
+                {% for index in range(seats_booked) %}
+                <form method="post" >
+                    <div class="form-group">
+                        <label for="Name{{index}}">Name:</label>
+                        <input type="text" id="Name{{index}}" name="Name{{index}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Age{{index}}">Age:</label>
+                        <input type="number" id="Age{{index}}" name="Age{{index}}" required>
+                    </div>
+                {% endfor %}
+                <button class="butn" type="submit">Book Now</button>
+    {% endif %}
+    
+            
+    
+    <br>
+    <a class="btn" href="/user/dashboard">Dashboard</a>
+</body>
+</html>
